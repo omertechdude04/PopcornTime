@@ -438,8 +438,7 @@ body.dark-mode {
 
   /* Keep the menu size on hover */
   .menu:hover {
-    height: 70px;
-    width: 68%;
+    display: none;
   }
 
 
