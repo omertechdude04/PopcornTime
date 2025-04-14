@@ -92,20 +92,6 @@ body.dark-mode {
   margin-top: 10px;
 }
 
-/* Hover effect for menu items */
-.menu-content li a:hover {
-  background-color: royalblue;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-}
-
-/* Remove hover effect for the menu */
-.menu:hover {
-  height: 70px; /* Keep the height constant */
-  width: 68%; /* Keep the menu at 70% width */
-}
-
 /* When menu expands, show text labels (now shown by default) */
 .menu:hover .menu-content li a {
   flex-direction: row; /* Horizontal layout */
