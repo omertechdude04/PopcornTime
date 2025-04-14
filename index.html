@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popcorn Time - Find something to watch!</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/appicon.png">
+</head>
+<body>
+  <header>
+    <div class="menu">
+      <ul class="menu-content">
+        <li><a href="index.html"><span class="material-symbols-outlined"></span><span><img src="logo.png"></span></a></li>
+        <li><a href="index.html"><span class="material-symbols-outlined">home</span><span>Home</span></a></li>
+        <li><a href="movies.html"><span class="material-symbols-outlined">local_movies</span><span>Movies</span></a></li>
+        <li><a href="tvshows.html"><span class="material-symbols-outlined">tv</span><span>Shows</span></a></li>
+        <li><a href="search.html"><span class="material-symbols-outlined">search</span><span>Search</span></a></li>
+        <li><a href="favorites.html"><span class="material-symbols-outlined">favorite</span><span>My List</span></a></li>
+        <li><a href="#"><span class="material-symbols-outlined">schedule</span><span>TV Schedule</span></a></li>
+      </ul>
+    </div>
+  </header>
+  
+
+  <section class="hero">
+    <div class="hero-content">
+      <a href="index.html"><img src="logo.png"></a>
+      <p>Explore the world of movies and TV shows. Check out what's trending, upcoming, and worth watching!</p>
+    </div>
+  </section>
+
+  <section class="featured-movies">
+    <h2>Trending TV Shows</h2>
+    <div class="carousel" id="trending-tvshows-carousel"></div>
+
+    <h2>New Episodes This Week</h2>
+    <div class="carousel" id="episodes-this-week-carousel"></div>
+
+    <h2>New Movies</h2>
+    <div class="carousel" id="new-releases-carousel"></div> <!-- New Releases carousel -->
+
+    <h2>Upcoming Movies</h2>
+    <div class="carousel" id="upcoming-carousel"></div>
+
+    <h2>Top Rated Movies</h2>
+    <div class="carousel" id="top-rated-carousel"></div>
+  </section>
+
+  <dialog class="modal" id="movie-modal">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="poster-container">
+          <img id="modal-poster" src="" alt="Movie Poster">
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <p id="modal-year"></p> <!-- Release Year -->
+          <p><span class="label">Runtime:</span> <span id="modal-runtime"></span></p>
+          <p id="modal-description"></p>
+          <p><span class="label">Director:</span> <span id="modal-director"></span></p>
+          <p id="modal-seasons" style="display: none;"><span class="label">Seasons: </span><span id="seasons-count"></span></p>
+          <p id="modal-episodes" style="display: none;"><span class="label">Episodes: </span><span id="episodes-count"></span></p>
+          <p><span class="label">Cast:</span> <span id="modal-cast"></span></p>
+          <p><span class="label">Where To Watch:</span> <span id="modal-watch"></span></p>
+          <p><span class="label">IMDb Score:</span> <span id="modal-imdb"></span></p>
+          <div id="modal-trailer"></div> <!-- YouTube trailer -->
+        </div>
+      </div>
+      <button class="close-btn">X</button>
+    </div>
+  </dialog>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

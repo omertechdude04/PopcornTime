@@ -1,0 +1,556 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Work Sans', sans-serif;
+    background: linear-gradient(90deg, #000000, darkred);
+    color: #f0f0f0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #f0f0f0;
+    color: #181818;
+  }
+  
+  .dark-mode .navbar {
+    background-color: #fff;
+  }
+  
+  .dark-mode .nav-links a {
+    color: #181818;
+  }
+  
+  .dark-mode #dark-mode-toggle {
+    background-color: #181818;
+    color: #f0f0f0;
+  }
+  
+/* Menu setup */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 68%; /* Make the menu wider by default */
+  height: 70px; /* Height of the menu */
+  background: linear-gradient(45deg, #001f3d, #330d1a);
+  z-index: 100;
+  transition: height 0.3s ease; 
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Menu items styling */
+.menu-content {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Align items horizontally */
+  justify-content: left; /* Align the items to the left */
+  align-items: center; /* Vertically center the items */
+  height: 100%; /* Ensure the menu items are centered vertically */
+  border-radius: 30px;
+}
+
+/* Always show icons */
+.material-symbols-outlined {
+  font-size: 30px;
+  color: white;
+  display: block; /* Icons should always be visible */
+  text-align: center;
+}
+
+/* Show text labels by default */
+.menu-content li a span:nth-child(2) {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Style for menu items */
+.menu-content li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-direction: row; /* Make the items horizontal */
+}
+
+/* Menu items image */
+.menu-content img {
+  max-width: 120px;
+  margin-top: 10px;
+}
+
+/* Hover effect for menu items */
+.menu-content li a:hover {
+  background-color: royalblue;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+/* Remove hover effect for the menu */
+.menu:hover {
+  height: 70px; /* Keep the height constant */
+  width: 68%; /* Keep the menu at 70% width */
+}
+
+/* When menu expands, show text labels (now shown by default) */
+.menu:hover .menu-content li a {
+  flex-direction: row; /* Horizontal layout */
+  justify-content: flex-start;
+}
+
+.menu:hover .menu-content li a span:nth-child(2) {
+  display: inline-block;
+  margin-left: 10px;
+}
+  
+  
+  #dark-mode-toggle {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #dark-mode-toggle:hover {
+    background-color: #ff3232;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('starwars.gif') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-size 0.3s ease-in-out;
+  }
+  
+  .hero h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .hero img {
+    max-width: 500px;
+    vertical-align: middle; /* Align the image vertically with the text */
+    margin-bottom: 5px; /* Adjust this if you need to tweak the vertical position a little more */
+  }
+  
+  
+  /* Featured Movies Section */
+  .featured-movies {
+    padding: 20px;
+    background: linear-gradient(90deg, #000000, darkred);
+  }
+  
+  .featured-movies h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 35px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    background-color: white;
+  }
+  
+  .carousel-item {
+    min-width: 200px;
+    background-color: black;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid black;
+  }
+  
+  .carousel-item:hover {
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .carousel-item h3 {
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .release-date span {
+    background-color: black;
+    color: yellow;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Archivo Black", sans-serif;
+    width: auto; /* Allow the width to be dynamic instead of 100% */
+    height: auto;
+  }
+  
+  /* Modal */
+  .modal {
+    border: none;
+    border-radius: 8px;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    color: white;
+    max-width: 850px;
+    width: 90%;
+    text-align: left;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .modal[open] {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  #modal-poster {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #modal-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  #modal-release-date {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f39c12;
+  }
+  
+  #modal-overview {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  #modal-cast {
+    font-size: 14px;
+    font-style: italic;
+    color: #ccc;
+  }
+  
+  #modal-streaming {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  #modal-trailer {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #modal-trailer iframe {
+    width: 90%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+  }
+  
+  #favorites-list {
+    display: flex;
+    flex-direction: row; /* Change to column */
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+#favorites-list div {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    color: black;
+    max-width: 220px;
+}
+
+#favorites-list div:hover {
+    transform: scale(1.05);
+}
+
+#favorites-list img {
+    max-width: 200px;
+    align-items: center;
+}
+
+/* Clear Favorites Button */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3232;
+}
+@media screen and (max-width: 768px) {
+  /* Hero section */
+  .hero {
+    height: auto;
+    padding: 40px 10px;
+    flex-direction: column;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  /* Menu shrinks nicely */
+  .menu {
+    width: 95%;                /* Longer across the screen */
+    height: 50px;              /* Shorter height */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+  }
+
+  .menu-content {
+    justify-content: space-between; /* Spread icons nicely */
+    padding: 0 8px;
+  }
+
+  .menu-content li a {
+    padding: 8px;
+    font-size: 10px;           /* Smaller font for labels */
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu-content li a span:nth-child(2) {
+    margin-left: 0;
+    margin-top: 2px;
+    font-size: 9px;            /* Even smaller for tight space */
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px;           /* Smaller icons */
+  }
+
+  .menu-content img {
+    max-width: 60px;           /* Smaller logo */
+    margin-top: 2px;
+  }
+
+  /* Featured Movies Section */
+  .featured-movies h2 {
+    font-size: 22px;
+  }
+
+  .carousel {
+    gap: 15px;
+    padding: 10px;
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+
+  .carousel-item {
+    flex: 0 0 45%; /* Show 2 in a row */
+    min-width: 90%;
+    height: auto;
+  }
+
+  .carousel-item img {
+    height: 100px;
+  }
+
+  .carousel-item h3 {
+    font-size: 13px;
+  }
+
+  .release-date span {
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+
+  /* Modal resizing */
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #modal-poster {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .modal-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  #modal-title {
+    font-size: 20px;
+  }
+
+  #modal-release-date,
+  #modal-overview,
+  #modal-cast,
+  #modal-streaming {
+    font-size: 14px;
+  }
+
+  #modal-trailer iframe {
+    width: 100%;
+  }
+
+  #favorites-list {
+    display: flex;
+    flex-direction: row; /* Change to column */
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#favorites-list div {
+    max-width: 170px;
+    flex: 0 1 calc(50% - 20px); /* 2 items per row, subtracting the gap */
+}
+
+#favorites-list img {
+    max-width: 150px;
+    align-items: center;
+}
+
+  /* Toggle button resize */
+  #dark-mode-toggle {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .menu-content {
+    justify-content: space-between; /* Spread icons nicely */
+    padding: 0 8px;
+  }
+
+  .menu-content li a:hover {
+    background-color: royalblue;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+  }
+}

@@ -1,0 +1,537 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: linear-gradient(90deg, #000000, darkred);
+  color: #f0f0f0;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #f0f0f0;
+  color: #181818;
+}
+
+.dark-mode .navbar {
+  background-color: #fff;
+}
+
+.dark-mode .nav-links a {
+  color: #181818;
+}
+
+.dark-mode #dark-mode-toggle {
+  background-color: #181818;
+  color: #f0f0f0;
+}
+
+/* Menu setup */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 68%; /* Make the menu wider by default */
+  height: 70px; /* Height of the menu */
+  background: linear-gradient(45deg, #001f3d, #330d1a);
+  z-index: 100;
+  transition: height 0.3s ease; 
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Menu items styling */
+.menu-content {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Align items horizontally */
+  justify-content: left; /* Align the items to the left */
+  align-items: center; /* Vertically center the items */
+  height: 100%; /* Ensure the menu items are centered vertically */
+  border-radius: 30px;
+}
+
+
+/* Always show icons */
+.material-symbols-outlined {
+  font-size: 30px;
+  color: white;
+  display: block; /* Icons should always be visible */
+  text-align: center;
+}
+
+/* Show text labels by default */
+.menu-content li a span:nth-child(2) {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Style for menu items */
+.menu-content li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-direction: row; /* Make the items horizontal */
+}
+
+/* Menu items image */
+.menu-content img {
+  max-width: 120px;
+  margin-top: 10px;
+}
+
+/* Hover effect for menu items */
+.menu-content li a:hover {
+  background-color: royalblue;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+/* Remove hover effect for the menu */
+.menu:hover {
+  height: 70px; /* Keep the height constant */
+  width: 68%; /* Keep the menu at 70% width */
+}
+
+/* When menu expands, show text labels (now shown by default) */
+.menu:hover .menu-content li a {
+  flex-direction: row; /* Horizontal layout */
+  justify-content: flex-start;
+}
+
+.menu:hover .menu-content li a span:nth-child(2) {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+
+#dark-mode-toggle {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #ff3232;
+}
+
+/* Hero Section */
+.hero {
+  background: url('starwars.gif') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero img {
+  max-width: 300px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+/* Featured Movies Section */
+.featured-movies {
+  padding: 20px;
+  background: linear-gradient(90deg, #000000, darkred);
+}
+
+.featured-movies h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.show-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* This is great! */
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(90deg, #000000, darkred);
+  border-radius: 10px;
+  margin-left: 60px; /* Adjusted to match menu width */
+  margin-right: 20px; /* Add this so there's space on the right too */
+}
+
+
+.show {
+  min-width: 200px;
+  background-color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid white;
+}
+
+.show h3 {
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  padding: 10px;
+}
+
+.show img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.show:hover {
+  transform: scale(1.05); /* Slightly zooms in */
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6);
+}
+
+.show img:hover {
+  transform: scale(1.05);
+}
+
+#load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#load-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Add-to-favorites button */
+.favorite-button {
+  background-color: white; /* Red for the button */
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.favorite-button:hover {
+  background-color: darkred; /* Darker red for hover */
+  color: #ffffff; /* Keep text white for visibility */
+}
+
+
+.modal {
+  border: none;
+  border-radius: 8px;
+  padding: 30px;
+  background: linear-gradient(45deg, black, #001f3d, #330d1a, black);
+  color: white;
+  max-width: 1000px;
+  width: 90%;
+  text-align: left;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal[open] {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.poster-container {
+  display: flex;
+  flex-direction: column; /* Keeps poster above button */
+  align-items: center; /* Centers everything */
+}
+
+#modal-poster {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Adds space between poster and button */
+  border: 2px solid white;
+}
+
+/* Movie Info */
+.modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  color: white;
+  font-weight: bold;
+}
+
+#modal-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+#modal-release-date {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+#modal-overview {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#modal-cast {
+  font-size: 14px;
+  font-style: italic;
+  color: white;
+}
+
+#modal-streaming {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+#modal-trailer {
+  margin-top: 20px;
+  width: 80%;
+  height: 300px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+#modal-trailer iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+}
+
+#modal-description {
+  font-size: 1.05rem;           /* Slightly larger for clarity */
+  font-weight: bold;             /* Lighter weight = smoother feel */
+  font-style: italic;           /* Adds a storytelling tone */
+  color: white;               /* Soft lavender-blue glow, stands out */
+  line-height: 1.7;
+  margin: 1rem 0;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  body {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero img {
+    justify-content: center;
+    margin-left: 2%;
+    width: 1000px;
+  }
+
+  .hero-content {
+    width: 500px;
+  }
+
+  .menu {
+    width: 95%;                /* Longer across the screen */
+    height: 50px;              /* Shorter height */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+  }
+
+  .menu-content {
+    justify-content: space-between; /* Spread icons nicely */
+    padding: 0 8px;
+  }
+
+  .menu-content li a {
+    padding: 8px;
+    font-size: 10px;           /* Smaller font for labels */
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu-content li a span:nth-child(2) {
+    margin-left: 0;
+    margin-top: 2px;
+    font-size: 9px;            /* Even smaller for tight space */
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px;           /* Smaller icons */
+  }
+
+  .menu-content img {
+    max-width: 60px;           /* Smaller logo */
+    margin-top: 2px;
+  }
+
+  .show {
+    min-width: 160px;
+    margin-left: 2%;
+  }
+
+  .show-container {
+    margin-left: 2%; /* Less margin for smaller screens */
+    grid-template-columns: repeat(2, 1fr); /* Two items per row on smaller screens */
+    justify-content: center;
+  }
+  
+
+  .show {
+    width: calc(50% - 10px); /* Adjusting for any margins or gaps */
+    margin: 2px; /* Optional: Adds spacing between items */
+  }
+  
+
+  .show img {
+    width: 100%;
+  }
+
+  #modal-poster {
+    width: 200px;
+  }
+
+  .modal-body {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+  }
+
+  .modal-info {
+    gap: 10px;
+  }
+
+  #modal-trailer {
+    margin-top: 20px;
+    width: 80%;
+    height: 150px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+  
+  #modal-trailer iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+  }
+
+  .menu-content {
+    justify-content: space-between; /* Spread icons nicely */
+    padding: 0 8px;
+  }
+
+  .menu-content li a:hover {
+    background-color: royalblue;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popcorn Time - Find something to watch!</title>
+  <link rel="stylesheet" href="favorites.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+  <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+  <header>
+
+  </header>
+
+  <div class="menu">
+    <ul class="menu-content">
+      <li><a href="index.html"><span class="material-symbols-outlined"></span><span><img src="logo.png"></span></a></li>
+      <li><a href="index.html"><span class="material-symbols-outlined">home</span><span>Home</span></a></li>
+      <li><a href="movies.html"><span class="material-symbols-outlined">local_movies</span><span>Movies</span></a></li>
+      <li><a href="tvshows.html"><span class="material-symbols-outlined">tv</span><span>Shows</span></a></li>
+      <li><a href="search.html"><span class="material-symbols-outlined">search</span><span>Search</span></a></li>
+      <li><a href="favorites.html"><span class="material-symbols-outlined">favorite</span><span>My List</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">schedule</span><span>TV Schedule</span></a></li>
+    </ul>
+  </div>
+  
+
+  <section class="hero">
+    <div class="hero-content">
+      <a href="favorites.html"><img src="watchlist.png"></a>
+    </div>
+  </section>
+  <div id="favorites-list"></div>
+  <button onclick="removeFromFavorites(event, '${id}')">Remove</button>
+
+  <dialog id="movie-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="document.getElementById('movie-modal').close()">×</span>
+        <div class="modal-body">
+            <img id="modal-poster" src="" alt="Movie Poster">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p><strong>Release Date:</strong> <span id="modal-release-date"></span></p>
+                <p id="modal-overview"></p>
+                <p><strong>Cast:</strong> <span id="modal-cast"></span></p>
+                <p><strong>Streaming on:</strong> <span id="modal-streaming"></span></p>
+                <p><span id="modal-trailer"></span></p>
+            </div>
+        </div>
+    </div>
+  </dialog>
+
+  <script src="favorites.js"></script>
+</body>
+</html>
