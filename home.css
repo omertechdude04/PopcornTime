@@ -433,10 +433,7 @@ body.dark-mode {
   }
 
   .menu-content li a:hover {
-    background-color: royalblue;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
+    display: none;
   }
 
   /* Keep the menu size on hover */
