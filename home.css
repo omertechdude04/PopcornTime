@@ -463,6 +463,12 @@ header {
 
   .featured-movies {
     padding: 10px;
+    margin-left: -10%;
+    margin-right: 0%;
+  }
+
+  .featured-movies h2 {
+    margin-left: 10%;
   }
 
   .carousel-item {
